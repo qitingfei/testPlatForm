@@ -9,13 +9,13 @@ from middleware.handler import Handler
 
 excel_datas = Handler.excel.read('Projects')
 
-@pytest.mark.parametrize('case_datas', excel_datas)
+@pytest.mark.parametrize('datas', excel_datas)
 def test_projects(datas):
     """创建项目接口"""
 
-    if '#new_projects#' in datas["case_datas"]:
+    if '#new_projects#' in datas["data"]:
         project_name = Handler.generate_new_projects()
-        datas["case_datas"] = datas["case_datas"].replace("#new_projects#", project_name)
+        datas["data"] = datas["data"].replace("#new_projects#", project_name)
 
     datas = json.dumps(datas)
     # 替换
@@ -26,7 +26,7 @@ def test_projects(datas):
     res = requests.request(method=datas['method'],
                             url=Handler.env_config["envurl"] + datas['path'],
                             headers=json.loads(datas['headers']),
-                            json=json.loads(datas['case_datas']))
+                            json=json.loads(datas['data']))
 
     logger.info("resp:{}".format(res.json()))
     resp = res.json()

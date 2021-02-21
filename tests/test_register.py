@@ -9,16 +9,16 @@ from middleware.handler import Handler
 
 excel_datas = Handler.excel.read('Register')
 
-@pytest.mark.parametrize('case_datas', excel_datas)
+@pytest.mark.parametrize('datas', excel_datas)
 def test_register(datas):
     """注册接口"""
-    if '#new_name#' in datas["case_datas"]:
+    if '#new_name#' in datas["data"]:
         name = Handler.generate_new_name()
-        datas["case_datas"] = datas["case_datas"].replace('#new_name#',name)
+        datas["data"] = datas["data"].replace('#new_name#',name)
 
-    if '#new_email#' in datas["case_datas"]:
+    if '#new_email#' in datas["data"]:
         email = Handler.generate_new_email()
-        datas["case_datas"] = datas["case_datas"].replace('#new_email#',email)
+        datas["data"] = datas["data"].replace('#new_email#',email)
 
     datas = json.dumps(datas)
     # 替换
@@ -29,7 +29,7 @@ def test_register(datas):
     res = requests.request(method=datas['method'],
                             url=Handler.env_config["envurl"] + datas['path'],
                             headers=json.loads(datas['headers']),
-                            json=json.loads(datas['case_datas']))
+                            json=json.loads(datas['data']))
     logger.info("resp:{}".format(res.json()))
     resp = res.json()
     resp["StatusCode"] = str(res.status_code)     # 添加状态码
