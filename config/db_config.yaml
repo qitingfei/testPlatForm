@@ -1,0 +1,7 @@
+db:
+  user: 'lemon520'
+  host: 'www.keyou.site'
+  port: 13306
+  password: '123456'
+  charset: 'utf8'
+  database: 'test'

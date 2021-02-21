@@ -1,0 +1,191 @@
+[2021-02-09 19:21:04,566] [INFO] [test_login.py] [line 34] resp:{'id': 138, 'username': 'LisaCarter', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMzgsInVzZXJuYW1lIjoiTGlzYUNhcnRlciIsImV4cCI6MTYxMjk1NjA2MiwiZW1haWwiOiJyb2JlcnRzbWFyeUBob3RtYWlsLmNvbSJ9.Ab2IjDYVnGftJbEgVtYDIGa3trsLJ27ZGve--G77zOM'}
+[2021-02-09 19:21:04,716] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:21:04,986] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:21:05,156] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:21:05,316] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:23:40,244] [INFO] [test_register.py] [line 33] resp:{'id': 140, 'username': 'MohammadBarnes', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDAsInVzZXJuYW1lIjoiTW9oYW1tYWRCYXJuZXMiLCJleHAiOjE2MTI5NTYyMTgsImVtYWlsIjoiZ2FyeWFzaGxleUBob3RtYWlsLmNvbSJ9.wJOHsF8x-KMMwNybp0qsu6_kMu7nzflna3vCIf1QfsA'}
+[2021-02-09 19:23:40,684] [INFO] [test_register.py] [line 33] resp:{'username': ['已存在一位使用该名字的用户。']}
+[2021-02-09 19:23:41,244] [INFO] [test_register.py] [line 33] resp:{'id': 141, 'username': 'Mr.TomYates', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDEsInVzZXJuYW1lIjoiTXIuVG9tWWF0ZXMiLCJleHAiOjE2MTI5NTYyMTksImVtYWlsIjoieGlhb3FpQHFxLmNvbSJ9.Z4tkPRl06M2p6eSaa5ckF0Cg_qgPUVXDROS-wuens44'}
+[2021-02-09 19:23:41,804] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 19:23:42,223] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 19:23:42,653] [INFO] [test_register.py] [line 33] resp:{'email': ['请输入合法的邮件地址。']}
+[2021-02-09 19:23:43,433] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 19:23:44,182] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 19:23:44,892] [INFO] [test_register.py] [line 33] resp:{'non_field_errors': ['两次输入密码不正确']}
+[2021-02-09 19:23:53,693] [INFO] [test_register.py] [line 33] resp:{'id': 142, 'username': 'HollieCook', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDIsInVzZXJuYW1lIjoiSG9sbGllQ29vayIsImV4cCI6MTYxMjk1NjIzMSwiZW1haWwiOiJqYnVybmV0dEBzaGVwaGVyZC5jb20ifQ.AyzaGt0mNdYA6emspRIK5wP-VP5dlS0tz5bc2pRLNMA'}
+[2021-02-09 19:23:54,113] [INFO] [test_register.py] [line 33] resp:{'username': ['已存在一位使用该名字的用户。']}
+[2021-02-09 19:23:54,523] [INFO] [test_register.py] [line 33] resp:{'email': ['此邮箱已注册']}
+[2021-02-09 19:23:54,953] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 19:23:55,363] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 19:23:55,762] [INFO] [test_register.py] [line 33] resp:{'email': ['请输入合法的邮件地址。']}
+[2021-02-09 19:23:56,512] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 19:23:57,302] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 19:23:58,055] [INFO] [test_register.py] [line 33] resp:{'non_field_errors': ['两次输入密码不正确']}
+[2021-02-09 19:24:10,874] [INFO] [test_login.py] [line 34] resp:{'id': 143, 'username': 'Ms.AndreaHyde', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDMsInVzZXJuYW1lIjoiTXMuQW5kcmVhSHlkZSIsImV4cCI6MTYxMjk1NjI0OCwiZW1haWwiOiJkZWJvcmFoNTZAZ21haWwuY29tIn0.V64YBVbMjhG3HF650hcGAJNPjAHun5GgDf39e1TwdlQ'}
+[2021-02-09 19:24:11,024] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:24:11,304] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:24:11,474] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:24:11,623] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:27:13,058] [INFO] [test_login.py] [line 34] resp:{'id': 146, 'username': 'GeorgiaBaldwin', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoiR2VvcmdpYUJhbGR3aW4iLCJleHAiOjE2MTI5NTY0MzEsImVtYWlsIjoiZ29yZG9uNjdAa2VsbHktZ2FyZG5lci5jb20ifQ.EHfbrlavZIz65cPQqq_7uR4m8muL-e6DoTXycmo9bTs'}
+[2021-02-09 19:27:13,228] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:27:13,518] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:27:13,687] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:27:13,857] [INFO] [test_login.py] [line 34] resp:{'detail': '方法 “GET” 不被允许。'}
+[2021-02-09 19:29:01,914] [INFO] [test_register.py] [line 33] resp:{'id': 147, 'username': 'LyndaPalmer-Mahmood', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoiTHluZGFQYWxtZXItTWFobW9vZCIsImV4cCI6MTYxMjk1NjUzOSwiZW1haWwiOiJyb2JlcnRwZXJraW5zQHlhaG9vLmNvbSJ9.YJr0cMk-PT5wN9AzPdFjLCNSkunj3AatNHxZmSvWJ3o'}
+[2021-02-09 19:29:02,354] [INFO] [test_register.py] [line 33] resp:{'username': ['已存在一位使用该名字的用户。']}
+[2021-02-09 19:29:02,805] [INFO] [test_register.py] [line 33] resp:{'email': ['此邮箱已注册']}
+[2021-02-09 19:29:03,249] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 19:29:03,689] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 19:29:04,119] [INFO] [test_register.py] [line 33] resp:{'email': ['请输入合法的邮件地址。']}
+[2021-02-09 19:29:04,868] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 19:29:05,648] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 19:29:06,358] [INFO] [test_register.py] [line 33] resp:{'non_field_errors': ['两次输入密码不正确']}
+[2021-02-09 19:30:02,303] [INFO] [test_login.py] [line 34] resp:{'id': 148, 'username': 'Dr.GraceFranklin', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoiRHIuR3JhY2VGcmFua2xpbiIsImV4cCI6MTYxMjk1NjYwMCwiZW1haWwiOiJicmV0dDIyQGZvc3Rlci5jb20ifQ.B6-ak-zQYn3Yy5jEykDxnMWGzto-SjdPMDRsdxW2B-I'}
+[2021-02-09 19:30:02,421] [INFO] [test_login.py] [line 34] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 19:30:02,514] [INFO] [test_login.py] [line 34] resp:{'password': ['该字段不能为空。']}
+[2021-02-09 19:30:02,734] [INFO] [test_login.py] [line 34] resp:{'non_field_errors': ['无法使用提供的认证信息登录。']}
+[2021-02-09 19:30:02,954] [INFO] [test_login.py] [line 34] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoiRHIuR3JhY2VGcmFua2xpbiIsImV4cCI6MTYxMjk1NjYwMCwiZW1haWwiOiJicmV0dDIyQGZvc3Rlci5jb20ifQ.B6-ak-zQYn3Yy5jEykDxnMWGzto-SjdPMDRsdxW2B-I', 'user_id': 148, 'username': 'Dr.GraceFranklin'}
+[2021-02-09 19:30:21,889] [INFO] [test_login.py] [line 34] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 19:30:22,119] [INFO] [test_login.py] [line 34] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 19:30:22,219] [INFO] [test_login.py] [line 34] resp:{'username': ['该字段不能为空。'], 'password': ['该字段不能为空。']}
+[2021-02-09 19:30:22,449] [INFO] [test_login.py] [line 34] resp:{'non_field_errors': ['无法使用提供的认证信息登录。']}
+[2021-02-09 19:30:22,559] [INFO] [test_login.py] [line 34] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 19:30:36,549] [INFO] [test_login.py] [line 34] resp:{'id': 149, 'username': 'DorothyHarvey', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoiRG9yb3RoeUhhcnZleSIsImV4cCI6MTYxMjk1NjYzNCwiZW1haWwiOiJmbWFob25leUBob3RtYWlsLmNvbSJ9.f9NShLPc3lG47b6pERfwHU2XBuAN7tI_SvlVej-iM9g'}
+[2021-02-09 19:30:36,659] [INFO] [test_login.py] [line 34] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 19:30:36,769] [INFO] [test_login.py] [line 34] resp:{'password': ['该字段不能为空。']}
+[2021-02-09 19:30:36,988] [INFO] [test_login.py] [line 34] resp:{'non_field_errors': ['无法使用提供的认证信息登录。']}
+[2021-02-09 19:30:37,218] [INFO] [test_login.py] [line 34] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoiRG9yb3RoeUhhcnZleSIsImV4cCI6MTYxMjk1NjYzNSwiZW1haWwiOiJmbWFob25leUBob3RtYWlsLmNvbSJ9.rR3nT6UDffrK288CSMRQjzmQb6P-BRDDt2WogA-sHVw', 'user_id': 149, 'username': 'DorothyHarvey'}
+[2021-02-09 19:33:04,345] [INFO] [test_login.py] [line 37] resp:{'id': 150, 'username': 'Ms.MarieParry', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoiTXMuTWFyaWVQYXJyeSIsImV4cCI6MTYxMjk1Njc4MiwiZW1haWwiOiJ0aG9tcHNvbmhhcm9sZEBib3lsZS5vcmcifQ.m-R8TF1-EmmamDLw2MQDYOkHErCAOSABFvyOSnZMQAk'}
+[2021-02-09 19:33:04,445] [INFO] [test_login.py] [line 37] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 19:33:04,545] [INFO] [test_login.py] [line 37] resp:{'password': ['该字段不能为空。']}
+[2021-02-09 19:33:05,084] [INFO] [test_login.py] [line 37] resp:{'non_field_errors': ['无法使用提供的认证信息登录。']}
+[2021-02-09 19:33:05,304] [INFO] [test_login.py] [line 37] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoiTXMuTWFyaWVQYXJyeSIsImV4cCI6MTYxMjk1Njc4MywiZW1haWwiOiJ0aG9tcHNvbmhhcm9sZEBib3lsZS5vcmcifQ.JkeKcyfR998KPTa3gah45p7gwt0csg2RgKoIVOzj4Fk', 'user_id': 150, 'username': 'Ms.MarieParry'}
+[2021-02-09 19:33:31,223] [INFO] [test_login.py] [line 38] resp:{'id': 151, 'username': 'BenjaminStone', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNTEsInVzZXJuYW1lIjoiQmVuamFtaW5TdG9uZSIsImV4cCI6MTYxMjk1NjgwOSwiZW1haWwiOiJzYW5kcmE4M0Bob3RtYWlsLmNvbSJ9.AjWr7XKJj1B-BNIBQeOUPLKn8fks-TcHl6YOhizrdBM'}
+[2021-02-09 19:33:31,343] [INFO] [test_login.py] [line 38] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 19:33:31,453] [INFO] [test_login.py] [line 38] resp:{'password': ['该字段不能为空。']}
+[2021-02-09 19:33:32,003] [INFO] [test_login.py] [line 38] resp:{'non_field_errors': ['无法使用提供的认证信息登录。']}
+[2021-02-09 19:33:32,222] [INFO] [test_login.py] [line 38] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNTEsInVzZXJuYW1lIjoiQmVuamFtaW5TdG9uZSIsImV4cCI6MTYxMjk1NjgxMCwiZW1haWwiOiJzYW5kcmE4M0Bob3RtYWlsLmNvbSJ9.GcvV6ywpoANLHE9JQZfyzfTxK28b8vHLbQRZ-QeB_gM', 'user_id': 151, 'username': 'BenjaminStone'}
+[2021-02-09 20:15:37,367] [INFO] [test_projects.py] [line 33] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5MzM1LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.8dGtZGYickGdcrrzxxHSv2G9e7lqICy5eiGtXimIa-Q', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:17:09,016] [INFO] [test_projects.py] [line 33] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5NDI2LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.05fY-Zf1LuFnNXjtLxfXyqwIvgmraKUmhkYAFsDQaFY', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:17:50,186] [INFO] [test_projects.py] [line 34] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5NDY3LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.sS2nwmJhWvrhUA8EhxVUeNQbgGrZxScfppjFRJdamLQ', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:18:49,583] [INFO] [test_projects.py] [line 34] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5NTI3LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.FmO_5XhS9YWI2hzfUlNB3C0qXUAwZoB_fi9Up4vvAN8', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:20:18,775] [INFO] [test_projects.py] [line 34] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5NjE2LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.PVjkJQK9UiujfcrYnNItNAH8hJ88NgRwJBLX5eVfRQM', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:21:03,648] [INFO] [test_projects.py] [line 36] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5NjYxLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.CX2Kjyek8vOqzXB8N7h07LfUkYtlN7-Y5bA77NFOizY', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:22:12,196] [INFO] [test_projects.py] [line 36] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5NzI5LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.ks5PCeGedfx9Nwi_s0iG1QwtQDZ7eSOfUHuGQ2NDE9k', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:22:12,647] [INFO] [test_projects.py] [line 36] resp:{'id': 21, 'create_time': '2021-02-09T20:22:10.427007+08:00', 'name': '这种深圳深圳重要.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:22:12,754] [INFO] [test_projects.py] [line 36] resp:{'name': ['该字段不能为空。']}
+[2021-02-09 20:22:13,310] [INFO] [test_projects.py] [line 36] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 20:23:44,026] [INFO] [test_projects.py] [line 36] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5ODIxLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.9fABnk7eSJ1Q26Fc7awFp9Lr60x7tYs6HeMr-moUXW8', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:23:44,469] [INFO] [test_projects.py] [line 36] resp:{'id': 22, 'create_time': '2021-02-09T20:23:42.240463+08:00', 'name': '问题组织简介怎么.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:23:44,566] [INFO] [test_projects.py] [line 36] resp:{'name': ['该字段不能为空。']}
+[2021-02-09 20:23:45,088] [INFO] [test_projects.py] [line 36] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 20:26:16,803] [INFO] [test_projects.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTU5OTc0LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.nFXjAHpS_Y1CNbAsP61FcP75awPlyV03Ta3ahxXUrts', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:26:17,250] [INFO] [test_projects.py] [line 35] resp:{'id': 24, 'create_time': '2021-02-09T20:26:15.019938+08:00', 'name': '决定关系简介处理注意电子.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:26:17,353] [INFO] [test_projects.py] [line 35] resp:{'name': ['具有 项目名称 的 项目信息 已存在。']}
+[2021-02-09 20:26:17,762] [INFO] [test_projects.py] [line 35] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 20:26:43,706] [INFO] [test_projects.py] [line 34] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYwMDAxLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.IvptFEHAHMumQyC_gR7Eok6Cz4BVxKrYpVnEaU3YLdU', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:26:44,186] [INFO] [test_projects.py] [line 34] resp:{'id': 25, 'create_time': '2021-02-09T20:26:41.954292+08:00', 'name': '如果如果建设能力汽车学习然后.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:26:44,296] [INFO] [test_projects.py] [line 34] resp:{'name': ['具有 项目名称 的 项目信息 已存在。']}
+[2021-02-09 20:26:44,717] [INFO] [test_projects.py] [line 34] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 20:28:02,340] [INFO] [test_projects.py] [line 34] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYwMDgwLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.j0avVkbwr7N2RBkwI49xZqavjHIBiqwYszplpbCS-uM', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:28:02,815] [INFO] [test_projects.py] [line 34] resp:{'id': 26, 'create_time': '2021-02-09T20:28:00.574830+08:00', 'name': '的话以后密码开始过程.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:28:02,930] [INFO] [test_projects.py] [line 34] resp:{'name': ['具有 项目名称 的 项目信息 已存在。']}
+[2021-02-09 20:28:03,350] [INFO] [test_projects.py] [line 34] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 20:43:33,187] [INFO] [test_interfaces.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxMDEwLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.PR85L1eyRBEQfLsa7J2pw-AmXP3_uQoivEwc9uUW7EM', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:43:33,667] [INFO] [test_interfaces.py] [line 31] resp:{'id': 28, 'create_time': '2021-02-09T20:43:31.385803+08:00', 'name': '程序经验社区应该精华.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:43:33,768] [INFO] [test_interfaces.py] [line 31] resp:{'name': ['具有 项目名称 的 项目信息 已存在。']}
+[2021-02-09 20:43:34,188] [INFO] [test_interfaces.py] [line 31] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 20:44:08,859] [INFO] [test_interfaces.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxMDQ2LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.pVY1wVW2Xn992dPI5-53ahywTpgovPhw1iWVOydcMx8', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:44:09,304] [INFO] [test_interfaces.py] [line 31] resp:{'id': 29, 'create_time': '2021-02-09T20:44:07.018939+08:00', 'name': '可以联系不是方面下载作品能够.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:44:09,532] [INFO] [test_interfaces.py] [line 31] resp:{'project_id': ['该字段不能为 null。']}
+[2021-02-09 20:45:22,750] [INFO] [test_interfaces.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxMTIwLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.Nh10Eu9pjtx0RrkvidXQ06adAvHyqu0BrBec-gQSWdg', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:45:23,228] [INFO] [test_interfaces.py] [line 31] resp:{'id': 30, 'create_time': '2021-02-09T20:45:20.940529+08:00', 'name': '其他网上的话事情软件虽然最后.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:45:23,463] [INFO] [test_interfaces.py] [line 31] resp:{'project_id': ['该字段不能为 null。']}
+[2021-02-09 20:46:21,855] [INFO] [test_interfaces.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxMTc5LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.wMCRQIcoX1QLEBBibRv-e02ld3_tqD5Kh2vNL76O4Kk', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:46:22,310] [INFO] [test_interfaces.py] [line 31] resp:{'id': 31, 'create_time': '2021-02-09T20:46:20.019193+08:00', 'name': '发布汽车北京.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:46:22,548] [INFO] [test_interfaces.py] [line 31] resp:{'project_id': ['该字段不能为 null。']}
+[2021-02-09 20:48:26,527] [INFO] [test_interfaces.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxMzA0LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.CkBtORElX262TK3lJPp5pWucFzICaR-1MJAYcXnUEPI', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:48:27,028] [INFO] [test_interfaces.py] [line 31] resp:{'id': 32, 'create_time': '2021-02-09T20:48:24.728009+08:00', 'name': '关系密码为了或者详细.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:48:27,141] [INFO] [test_interfaces.py] [line 31] resp:{'id': 8, 'name': '小齐测试接口', 'tester': 'xiaoqi', 'project': '关系密码为了或者详细.', 'project_id': 32, 'desc': None, 'create_time': '2021-02-09T20:48:24.847778+08:00'}
+[2021-02-09 20:49:00,214] [INFO] [test_interfaces.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxMzM3LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.vrMC9o-oWfSf9TNPry5LaJkIYFdH0a6a8gcdgGNK1pI', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:49:00,656] [INFO] [test_interfaces.py] [line 31] resp:{'id': 33, 'create_time': '2021-02-09T20:48:58.360021+08:00', 'name': '人民客户这么任何通过.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:49:00,759] [INFO] [test_interfaces.py] [line 31] resp:{'name': ['具有 接口名称 的 接口信息 已存在。']}
+[2021-02-09 20:54:44,230] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxNjgxLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.JPrIf9CIGgiYGTjdkMLIcnjYo56Oy0sNTaRwoSS3_8E', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:54:44,704] [INFO] [test_interfaces.py] [line 35] resp:{'id': 34, 'create_time': '2021-02-09T20:54:42.391629+08:00', 'name': '发表状态分析密码部分电话怎么由于.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:54:45,116] [INFO] [test_interfaces.py] [line 35] resp:{'name': ['具有 接口名称 的 接口信息 已存在。']}
+[2021-02-09 20:55:23,170] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxNzIwLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.VBO8wroNJL9LdjP1nAVUC2qWvgUwMEpqC0XpknAuZr8', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:55:23,612] [INFO] [test_interfaces.py] [line 35] resp:{'id': 35, 'create_time': '2021-02-09T20:55:21.297981+08:00', 'name': '次数积分能力学习我的.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:55:24,019] [INFO] [test_interfaces.py] [line 35] resp:{'name': ['具有 接口名称 的 接口信息 已存在。']}
+[2021-02-09 20:55:58,139] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxNzU1LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.vTCZLTI-v3zu6zWgxCazVfKg4jFrBxkU9PYp_9itNt8', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:55:58,581] [INFO] [test_interfaces.py] [line 35] resp:{'id': 36, 'create_time': '2021-02-09T20:55:56.261154+08:00', 'name': '回复作品情况介绍.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:55:58,999] [INFO] [test_interfaces.py] [line 35] resp:{'name': ['具有 接口名称 的 接口信息 已存在。']}
+[2021-02-09 20:57:16,428] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxODM0LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.eO11dhGI8rfDJQRJr7y7vnmmxpW4qOOT3BbDH7wcZPM', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:57:16,884] [INFO] [test_interfaces.py] [line 35] resp:{'id': 37, 'create_time': '2021-02-09T20:57:14.552595+08:00', 'name': '是否资料的人.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:57:17,330] [INFO] [test_interfaces.py] [line 35] resp:{'name': ['该字段不能为空。']}
+[2021-02-09 20:58:04,700] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxODgyLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.FpyZrD4HXROM0i8vjJqhH-uoIJIR1HCxQKDlHsqscCs', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:58:05,154] [INFO] [test_interfaces.py] [line 35] resp:{'id': 38, 'create_time': '2021-02-09T20:58:02.831304+08:00', 'name': '介绍首页如何功能.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:58:05,582] [INFO] [test_interfaces.py] [line 35] resp:{'name': ['该字段不能为空。']}
+[2021-02-09 20:58:30,518] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYxOTA4LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.i51cgWC2TdUCGMvEvGejQtu_iQzt5k-0fDCkHAvtfoY', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 20:58:30,989] [INFO] [test_interfaces.py] [line 35] resp:{'id': 39, 'create_time': '2021-02-09T20:58:28.665080+08:00', 'name': '帮助然后不能那个专业必须.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 20:58:31,394] [INFO] [test_interfaces.py] [line 35] resp:{'id': 9, 'name': '商品', 'tester': 'xiaoqi', 'project': '帮助然后不能那个专业必须.', 'project_id': 39, 'desc': None, 'create_time': '2021-02-09T20:58:29.070826+08:00'}
+[2021-02-09 21:14:20,309] [INFO] [test_testcases.py] [line 39] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYyODU3LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.PKaeWwYJXEmiXp-F0EXLRptyC5HXACyDszRzMk-fPzY', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:14:20,783] [INFO] [test_testcases.py] [line 39] resp:{'id': 40, 'create_time': '2021-02-09T21:14:18.411170+08:00', 'name': '工作作为发生等级大学其实.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:14:21,254] [INFO] [test_testcases.py] [line 39] resp:{'id': 11, 'name': '特别', 'tester': 'xiaoqi', 'project': '工作作为发生等级大学其实.', 'project_id': 40, 'desc': None, 'create_time': '2021-02-09T21:14:18.885459+08:00'}
+[2021-02-09 21:14:21,679] [INFO] [test_testcases.py] [line 39] resp:{'interface': {'iid': ['请填写合法的整数值。'], 'pid': ['请填写合法的整数值。']}}
+[2021-02-09 21:15:07,194] [INFO] [test_testcases.py] [line 39] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYyOTA0LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.DXCnFEgkavPNPCYmO4ggmI0D8Bj7M4hBFJWf_bfH9IU', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:15:07,626] [INFO] [test_testcases.py] [line 39] resp:{'id': 41, 'create_time': '2021-02-09T21:15:05.253840+08:00', 'name': '主题政府作为支持工作有限全国北京.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:15:08,034] [INFO] [test_testcases.py] [line 39] resp:{'id': 12, 'name': '美国', 'tester': 'xiaoqi', 'project': '主题政府作为支持工作有限全国北京.', 'project_id': 41, 'desc': None, 'create_time': '2021-02-09T21:15:05.663544+08:00'}
+[2021-02-09 21:16:34,673] [INFO] [test_testcases.py] [line 39] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYyOTkyLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.8CFuK-2KQfm0OJUkRqefhxIZm69LeD15G6y4OwKUZWY', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:16:35,125] [INFO] [test_testcases.py] [line 39] resp:{'id': 42, 'create_time': '2021-02-09T21:16:32.742815+08:00', 'name': '情况评论日期已经密码.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:16:35,554] [INFO] [test_testcases.py] [line 39] resp:{'id': 13, 'name': '研究', 'tester': 'xiaoqi', 'project': '情况评论日期已经密码.', 'project_id': 42, 'desc': None, 'create_time': '2021-02-09T21:16:33.179312+08:00'}
+[2021-02-09 21:16:35,986] [INFO] [test_testcases.py] [line 39] resp:{'id': 8, 'name': '名称', 'interface': {'name': '研究', 'project': '情况评论日期已经密码.'}, 'author': 'xiaoqi'}
+[2021-02-09 21:25:11,412] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzNTA5LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.dIHtWXs4PEBAESEdTO09mWUvlT6CIOVuGRrxj47vIew', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:25:11,896] [INFO] [test_interfaces.py] [line 35] resp:{'id': 43, 'create_time': '2021-02-09T21:25:09.495021+08:00', 'name': '项目最大但是原因行业威望人民.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:25:12,293] [INFO] [test_interfaces.py] [line 35] resp:{'id': 14, 'name': '希望', 'tester': 'xiaoqi', 'project': '项目最大但是原因行业威望人民.', 'project_id': 43, 'desc': None, 'create_time': '2021-02-09T21:25:09.894177+08:00'}
+[2021-02-09 21:25:13,196] [INFO] [test_login.py] [line 37] resp:{'id': 237, 'username': 'AlisonHall', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzcsInVzZXJuYW1lIjoiQWxpc29uSGFsbCIsImV4cCI6MTYxMjk2MzUxMCwiZW1haWwiOiJlbWlseTY0QHlhaG9vLmNvbSJ9.6eDvkRiQQp3dxAews-LxfeHCt2dNDuZWz9Db7nDycb8'}
+[2021-02-09 21:25:13,299] [INFO] [test_login.py] [line 37] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 21:25:13,406] [INFO] [test_login.py] [line 37] resp:{'password': ['该字段不能为空。']}
+[2021-02-09 21:25:13,938] [INFO] [test_login.py] [line 37] resp:{'non_field_errors': ['无法使用提供的认证信息登录。']}
+[2021-02-09 21:25:14,164] [INFO] [test_login.py] [line 37] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzcsInVzZXJuYW1lIjoiQWxpc29uSGFsbCIsImV4cCI6MTYxMjk2MzUxMSwiZW1haWwiOiJlbWlseTY0QHlhaG9vLmNvbSJ9.3r7s2iG2aOBQPtjcPxNEWqag5GqhjawWVM5mfVSGgSs', 'user_id': 237, 'username': 'AlisonHall'}
+[2021-02-09 21:25:14,375] [INFO] [test_projects.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzNTExLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.lnHaGgDQZxDge9yjF10tNEgIUd1JbaDBWzWi2_oH60s', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:25:14,784] [INFO] [test_projects.py] [line 31] resp:{'id': 44, 'create_time': '2021-02-09T21:25:12.380883+08:00', 'name': '有些运行设计日期.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:25:14,883] [INFO] [test_projects.py] [line 31] resp:{'name': ['具有 项目名称 的 项目信息 已存在。']}
+[2021-02-09 21:25:15,285] [INFO] [test_projects.py] [line 31] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 21:25:16,149] [INFO] [test_register.py] [line 33] resp:{'id': 238, 'username': 'GemmaHall', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMzgsInVzZXJuYW1lIjoiR2VtbWFIYWxsIiwiZXhwIjoxNjEyOTYzNTEzLCJlbWFpbCI6ImphbmV0cmljaGFyZHNvbkB5YWhvby5jb20ifQ.dsQu-oVDDNuSrhmAclAkYbNiRkDRhgWpdjWCNhWNPNI'}
+[2021-02-09 21:25:16,562] [INFO] [test_register.py] [line 33] resp:{'username': ['已存在一位使用该名字的用户。']}
+[2021-02-09 21:25:16,994] [INFO] [test_register.py] [line 33] resp:{'email': ['此邮箱已注册']}
+[2021-02-09 21:25:17,447] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 21:25:17,858] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 21:25:18,269] [INFO] [test_register.py] [line 33] resp:{'email': ['请输入合法的邮件地址。']}
+[2021-02-09 21:25:19,040] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 21:25:19,748] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 21:25:20,465] [INFO] [test_register.py] [line 33] resp:{'non_field_errors': ['两次输入密码不正确']}
+[2021-02-09 21:25:20,678] [INFO] [test_testcases.py] [line 39] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzNTE4LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.o4hbSkBgnUENDW5uGS6sS0uWVHUoIT3n_Tuxw3z8kgQ', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:25:21,092] [INFO] [test_testcases.py] [line 39] resp:{'id': 45, 'create_time': '2021-02-09T21:25:18.689818+08:00', 'name': '帖子基本中文完成怎么使用单位可以.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:25:21,545] [INFO] [test_testcases.py] [line 39] resp:{'id': 15, 'name': '虽然', 'tester': 'xiaoqi', 'project': '帖子基本中文完成怎么使用单位可以.', 'project_id': 45, 'desc': None, 'create_time': '2021-02-09T21:25:19.144036+08:00'}
+[2021-02-09 21:25:22,017] [INFO] [test_testcases.py] [line 39] resp:{'id': 9, 'name': '要求', 'interface': {'name': '虽然', 'project': '帖子基本中文完成怎么使用单位可以.'}, 'author': 'xiaoqi'}
+[2021-02-09 21:32:44,987] [INFO] [test_interfaces.py] [line 35] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzOTYyLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.FXJXlutFj4hG5xEWeLNdNn5Y_W2YlttU4Oo9J0jYSKU', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:32:45,413] [INFO] [test_interfaces.py] [line 35] resp:{'id': 46, 'create_time': '2021-02-09T21:32:42.990846+08:00', 'name': '手机方面会员.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:32:45,838] [INFO] [test_interfaces.py] [line 35] resp:{'id': 16, 'name': '因为', 'tester': 'xiaoqi', 'project': '手机方面会员.', 'project_id': 46, 'desc': None, 'create_time': '2021-02-09T21:32:43.417520+08:00'}
+[2021-02-09 21:32:46,712] [INFO] [test_login.py] [line 37] resp:{'id': 240, 'username': 'MaxStewart-Thompson', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDAsInVzZXJuYW1lIjoiTWF4U3Rld2FydC1UaG9tcHNvbiIsImV4cCI6MTYxMjk2Mzk2NCwiZW1haWwiOiJiaHVkc29uQGliYXJyYS5jb20ifQ.bSn8w-_JiwwtCeSwMvEAyqoyhA-F6zlza_kCldoLrI8'}
+[2021-02-09 21:32:46,818] [INFO] [test_login.py] [line 37] resp:{'username': ['该字段不能为空。']}
+[2021-02-09 21:32:46,915] [INFO] [test_login.py] [line 37] resp:{'password': ['该字段不能为空。']}
+[2021-02-09 21:32:47,475] [INFO] [test_login.py] [line 37] resp:{'non_field_errors': ['无法使用提供的认证信息登录。']}
+[2021-02-09 21:32:47,697] [INFO] [test_login.py] [line 37] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDAsInVzZXJuYW1lIjoiTWF4U3Rld2FydC1UaG9tcHNvbiIsImV4cCI6MTYxMjk2Mzk2NSwiZW1haWwiOiJiaHVkc29uQGliYXJyYS5jb20ifQ.UVA5MhH00PgcifrQ6YkjM5za5C-GXbEFqrnF9kWX-pY', 'user_id': 240, 'username': 'MaxStewart-Thompson'}
+[2021-02-09 21:32:47,910] [INFO] [test_projects.py] [line 31] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzOTY1LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.aw8PTUfkihEMlzSgrN0hbk47R7k-H7ReC2PZOEoA7XE', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:32:48,362] [INFO] [test_projects.py] [line 31] resp:{'id': 47, 'create_time': '2021-02-09T21:32:45.939083+08:00', 'name': '一起记者商品.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:32:48,477] [INFO] [test_projects.py] [line 31] resp:{'name': ['具有 项目名称 的 项目信息 已存在。']}
+[2021-02-09 21:32:48,885] [INFO] [test_projects.py] [line 31] resp:{'leader': ['该字段是必填项。']}
+[2021-02-09 21:32:49,784] [INFO] [test_register.py] [line 33] resp:{'id': 241, 'username': 'Mr.GraemeMoore', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDEsInVzZXJuYW1lIjoiTXIuR3JhZW1lTW9vcmUiLCJleHAiOjE2MTI5NjM5NjcsImVtYWlsIjoic3RldmVkYXZpc0Bob3RtYWlsLmNvbSJ9.km1JntpFCe9wSBMVC1NemDYxQl1vk_JaOQintVKOEyk'}
+[2021-02-09 21:32:50,203] [INFO] [test_register.py] [line 33] resp:{'username': ['已存在一位使用该名字的用户。']}
+[2021-02-09 21:32:50,606] [INFO] [test_register.py] [line 33] resp:{'email': ['此邮箱已注册']}
+[2021-02-09 21:32:51,020] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 21:32:51,446] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名']}
+[2021-02-09 21:32:51,848] [INFO] [test_register.py] [line 33] resp:{'username': ['仅允许6-20个字符的用户名'], 'email': ['请输入合法的邮件地址。']}
+[2021-02-09 21:32:52,600] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 21:32:53,330] [INFO] [test_register.py] [line 33] resp:{'password': ['仅允许6-20个字符的密码'], 'password_confirm': ['仅允许6~20个字符的确认密码']}
+[2021-02-09 21:32:54,112] [INFO] [test_register.py] [line 33] resp:{'non_field_errors': ['两次输入密码不正确']}
+[2021-02-09 21:32:54,328] [INFO] [test_testcases.py] [line 39] resp:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzOTcxLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.5vpwCKjavVRfrex6TtS9UYae6mBML4cKjoYiwfHUikw', 'user_id': 183, 'username': 'xiaoqi'}
+[2021-02-09 21:32:54,734] [INFO] [test_testcases.py] [line 39] resp:{'id': 48, 'create_time': '2021-02-09T21:32:52.306450+08:00', 'name': '孩子大家报告生产.', 'leader': '小齐', 'tester': '小齐', 'programmer': '小齐', 'publish_app': '小齐应用', 'desc': ''}
+[2021-02-09 21:32:55,169] [INFO] [test_testcases.py] [line 39] resp:{'id': 17, 'name': '工作', 'tester': 'xiaoqi', 'project': '孩子大家报告生产.', 'project_id': 48, 'desc': None, 'create_time': '2021-02-09T21:32:52.746249+08:00'}
+[2021-02-09 21:32:55,593] [INFO] [test_testcases.py] [line 39] resp:{'id': 10, 'name': '信息', 'interface': {'name': '工作', 'project': '孩子大家报告生产.'}, 'author': 'xiaoqi'}

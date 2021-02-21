@@ -1,0 +1,7 @@
+# 注释, key后面的: 后必须加空格分开 key value
+user_info:
+  username: 'xiaoqi'
+  password: '12345678'
+  email: 'xiaoqiq@qq.com'
+
+project_name: '小齐测试'

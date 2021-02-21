@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++)
+        filterItems[i].hidden = false;
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>report2021-02-09 21_32_43.html</h1>
+    <p>Report generated on 09-Feb-2021 at 21:32:55 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>JAVA_HOME</td>
+        <td>D:\Java\jdk</td></tr>
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "0.13.1", "py": "1.10.0", "pytest": "6.2.1"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.18362-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"Faker": "5.6.5", "allure-pytest": "2.8.29", "html": "3.1.1", "metadata": "1.11.0"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.8.1</td></tr></table>
+    <h2>Summary</h2>
+    <p>25 tests ran in 11.65 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">25 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_interfaces.py::test_interfaces[datas0]</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:44,987] [INFO] [test_interfaces.py] [line 35] resp:{&#x27;token&#x27;: &#x27;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzOTYyLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.FXJXlutFj4hG5xEWeLNdNn5Y_W2YlttU4Oo9J0jYSKU&#x27;, &#x27;user_id&#x27;: 183, &#x27;username&#x27;: &#x27;xiaoqi&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_interfaces.py::test_interfaces[datas1]</td>
+          <td class="col-duration">0.42</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:45,413] [INFO] [test_interfaces.py] [line 35] resp:{&#x27;id&#x27;: 46, &#x27;create_time&#x27;: &#x27;2021-02-09T21:32:42.990846+08:00&#x27;, &#x27;name&#x27;: &#x27;手机方面会员.&#x27;, &#x27;leader&#x27;: &#x27;小齐&#x27;, &#x27;tester&#x27;: &#x27;小齐&#x27;, &#x27;programmer&#x27;: &#x27;小齐&#x27;, &#x27;publish_app&#x27;: &#x27;小齐应用&#x27;, &#x27;desc&#x27;: &#x27;&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_interfaces.py::test_interfaces[datas2]</td>
+          <td class="col-duration">0.42</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:45,838] [INFO] [test_interfaces.py] [line 35] resp:{&#x27;id&#x27;: 16, &#x27;name&#x27;: &#x27;因为&#x27;, &#x27;tester&#x27;: &#x27;xiaoqi&#x27;, &#x27;project&#x27;: &#x27;手机方面会员.&#x27;, &#x27;project_id&#x27;: 46, &#x27;desc&#x27;: None, &#x27;create_time&#x27;: &#x27;2021-02-09T21:32:43.417520+08:00&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_login.py::test_login[datas0]</td>
+          <td class="col-duration">0.87</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:46,712] [INFO] [test_login.py] [line 37] resp:{&#x27;id&#x27;: 240, &#x27;username&#x27;: &#x27;MaxStewart-Thompson&#x27;, &#x27;token&#x27;: &#x27;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDAsInVzZXJuYW1lIjoiTWF4U3Rld2FydC1UaG9tcHNvbiIsImV4cCI6MTYxMjk2Mzk2NCwiZW1haWwiOiJiaHVkc29uQGliYXJyYS5jb20ifQ.bSn8w-_JiwwtCeSwMvEAyqoyhA-F6zlza_kCldoLrI8&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_login.py::test_login[datas1]</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:46,818] [INFO] [test_login.py] [line 37] resp:{&#x27;username&#x27;: [&#x27;该字段不能为空。&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_login.py::test_login[datas2]</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:46,915] [INFO] [test_login.py] [line 37] resp:{&#x27;password&#x27;: [&#x27;该字段不能为空。&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_login.py::test_login[datas3]</td>
+          <td class="col-duration">0.56</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:47,475] [INFO] [test_login.py] [line 37] resp:{&#x27;non_field_errors&#x27;: [&#x27;无法使用提供的认证信息登录。&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_login.py::test_login[datas4]</td>
+          <td class="col-duration">0.22</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:47,697] [INFO] [test_login.py] [line 37] resp:{&#x27;token&#x27;: &#x27;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDAsInVzZXJuYW1lIjoiTWF4U3Rld2FydC1UaG9tcHNvbiIsImV4cCI6MTYxMjk2Mzk2NSwiZW1haWwiOiJiaHVkc29uQGliYXJyYS5jb20ifQ.UVA5MhH00PgcifrQ6YkjM5za5C-GXbEFqrnF9kWX-pY&#x27;, &#x27;user_id&#x27;: 240, &#x27;username&#x27;: &#x27;MaxStewart-Thompson&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_projects.py::test_projects[datas0]</td>
+          <td class="col-duration">0.21</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:47,910] [INFO] [test_projects.py] [line 31] resp:{&#x27;token&#x27;: &#x27;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzOTY1LCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.aw8PTUfkihEMlzSgrN0hbk47R7k-H7ReC2PZOEoA7XE&#x27;, &#x27;user_id&#x27;: 183, &#x27;username&#x27;: &#x27;xiaoqi&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_projects.py::test_projects[datas1]</td>
+          <td class="col-duration">0.45</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:48,362] [INFO] [test_projects.py] [line 31] resp:{&#x27;id&#x27;: 47, &#x27;create_time&#x27;: &#x27;2021-02-09T21:32:45.939083+08:00&#x27;, &#x27;name&#x27;: &#x27;一起记者商品.&#x27;, &#x27;leader&#x27;: &#x27;小齐&#x27;, &#x27;tester&#x27;: &#x27;小齐&#x27;, &#x27;programmer&#x27;: &#x27;小齐&#x27;, &#x27;publish_app&#x27;: &#x27;小齐应用&#x27;, &#x27;desc&#x27;: &#x27;&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_projects.py::test_projects[datas2]</td>
+          <td class="col-duration">0.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:48,477] [INFO] [test_projects.py] [line 31] resp:{&#x27;name&#x27;: [&#x27;具有 项目名称 的 项目信息 已存在。&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_projects.py::test_projects[datas3]</td>
+          <td class="col-duration">0.40</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:48,885] [INFO] [test_projects.py] [line 31] resp:{&#x27;leader&#x27;: [&#x27;该字段是必填项。&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas0]</td>
+          <td class="col-duration">0.89</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:49,784] [INFO] [test_register.py] [line 33] resp:{&#x27;id&#x27;: 241, &#x27;username&#x27;: &#x27;Mr.GraemeMoore&#x27;, &#x27;token&#x27;: &#x27;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNDEsInVzZXJuYW1lIjoiTXIuR3JhZW1lTW9vcmUiLCJleHAiOjE2MTI5NjM5NjcsImVtYWlsIjoic3RldmVkYXZpc0Bob3RtYWlsLmNvbSJ9.km1JntpFCe9wSBMVC1NemDYxQl1vk_JaOQintVKOEyk&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas1]</td>
+          <td class="col-duration">0.41</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:50,203] [INFO] [test_register.py] [line 33] resp:{&#x27;username&#x27;: [&#x27;已存在一位使用该名字的用户。&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas2]</td>
+          <td class="col-duration">0.40</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:50,606] [INFO] [test_register.py] [line 33] resp:{&#x27;email&#x27;: [&#x27;此邮箱已注册&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas3]</td>
+          <td class="col-duration">0.41</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:51,020] [INFO] [test_register.py] [line 33] resp:{&#x27;username&#x27;: [&#x27;仅允许6-20个字符的用户名&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas4]</td>
+          <td class="col-duration">0.42</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:51,446] [INFO] [test_register.py] [line 33] resp:{&#x27;username&#x27;: [&#x27;仅允许6-20个字符的用户名&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas5]</td>
+          <td class="col-duration">0.40</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:51,848] [INFO] [test_register.py] [line 33] resp:{&#x27;username&#x27;: [&#x27;仅允许6-20个字符的用户名&#x27;], &#x27;email&#x27;: [&#x27;请输入合法的邮件地址。&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas6]</td>
+          <td class="col-duration">0.75</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:52,600] [INFO] [test_register.py] [line 33] resp:{&#x27;password&#x27;: [&#x27;仅允许6-20个字符的密码&#x27;], &#x27;password_confirm&#x27;: [&#x27;仅允许6~20个字符的确认密码&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas7]</td>
+          <td class="col-duration">0.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:53,330] [INFO] [test_register.py] [line 33] resp:{&#x27;password&#x27;: [&#x27;仅允许6-20个字符的密码&#x27;], &#x27;password_confirm&#x27;: [&#x27;仅允许6~20个字符的确认密码&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_register.py::test_register[datas8]</td>
+          <td class="col-duration">0.78</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:54,112] [INFO] [test_register.py] [line 33] resp:{&#x27;non_field_errors&#x27;: [&#x27;两次输入密码不正确&#x27;]}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_testcases.py::test_interfaces[datas0]</td>
+          <td class="col-duration">0.21</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:54,328] [INFO] [test_testcases.py] [line 39] resp:{&#x27;token&#x27;: &#x27;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODMsInVzZXJuYW1lIjoieGlhb3FpIiwiZXhwIjoxNjEyOTYzOTcxLCJlbWFpbCI6InhpYW9xaXFAcXEuY29tIn0.5vpwCKjavVRfrex6TtS9UYae6mBML4cKjoYiwfHUikw&#x27;, &#x27;user_id&#x27;: 183, &#x27;username&#x27;: &#x27;xiaoqi&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_testcases.py::test_interfaces[datas1]</td>
+          <td class="col-duration">0.40</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:54,734] [INFO] [test_testcases.py] [line 39] resp:{&#x27;id&#x27;: 48, &#x27;create_time&#x27;: &#x27;2021-02-09T21:32:52.306450+08:00&#x27;, &#x27;name&#x27;: &#x27;孩子大家报告生产.&#x27;, &#x27;leader&#x27;: &#x27;小齐&#x27;, &#x27;tester&#x27;: &#x27;小齐&#x27;, &#x27;programmer&#x27;: &#x27;小齐&#x27;, &#x27;publish_app&#x27;: &#x27;小齐应用&#x27;, &#x27;desc&#x27;: &#x27;&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_testcases.py::test_interfaces[datas2]</td>
+          <td class="col-duration">0.43</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:55,169] [INFO] [test_testcases.py] [line 39] resp:{&#x27;id&#x27;: 17, &#x27;name&#x27;: &#x27;工作&#x27;, &#x27;tester&#x27;: &#x27;xiaoqi&#x27;, &#x27;project&#x27;: &#x27;孩子大家报告生产.&#x27;, &#x27;project_id&#x27;: 48, &#x27;desc&#x27;: None, &#x27;create_time&#x27;: &#x27;2021-02-09T21:32:52.746249+08:00&#x27;}
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_testcases.py::test_interfaces[datas3]</td>
+          <td class="col-duration">0.42</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>[2021-02-09 21:32:55,593] [INFO] [test_testcases.py] [line 39] resp:{&#x27;id&#x27;: 10, &#x27;name&#x27;: &#x27;信息&#x27;, &#x27;interface&#x27;: {&#x27;name&#x27;: &#x27;工作&#x27;, &#x27;project&#x27;: &#x27;孩子大家报告生产.&#x27;}, &#x27;author&#x27;: &#x27;xiaoqi&#x27;}
+<br/></div></td></tr></tbody></table></body></html>
